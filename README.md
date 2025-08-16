@@ -82,10 +82,98 @@ This repository is designed as a portfolio-quality demo to demonstrate expertise
 
 
 ## Test and attack demonstartion
-<img width="822" height="831" alt="изображение" src="https://github.com/user-attachments/assets/5708d29f-a64a-49ba-ada3-7e8d57d3e2de" />
 
-<img width="669" height="536" alt="изображение" src="https://github.com/user-attachments/assets/e983f64b-7b08-4042-93dd-2bf7cd7a99e0" />
 
+ ```bash
+
+  ⎿  🚨 REENTRANCY ATTACK DEMONSTRATION
+     ===================================
+     ⚠️  WARNING: This is for educational purposes only!
+
+     👥 Setting up accounts:
+       Deployer: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+       Victim 1: 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+       Victim 2: 0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC
+       Attacker: 0x90F79bf6EB2c4f870365E785982E1f101E93b906
+
+     🏗️  Deploying vulnerable Vault contract...
+     ✅ Vault deployed at: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+
+     💰 Victims depositing funds to vault...
+       Victim 1 deposited: 2.0 ETH
+       Victim 2 deposited: 2.0 ETH
+       Total vault balance: 4.0 ETH
+
+     🔴 Deploying attacker contract...
+     ✅ Attacker contract deployed at: 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
+
+     🎯 Attacker deposits initial funds...
+       Attacker deposited: 1.0 ETH
+
+     📊 Pre-attack state:
+       Vault balance: 5.0 ETH
+       Attacker ETH balance: 999.0 ETH
+
+     🚨 EXECUTING REENTRANCY ATTACK...
+     =====================================
+
+     📋 Attack events:
+       🎯 Attack started with amount: 1.0 ETH
+         🔄 Reentrancy call #1, vault balance: 4.0 ETH
+         🔄 Reentrancy call #2, vault balance: 3.0 ETH
+         🔄 Reentrancy call #3, vault balance: 2.0 ETH
+         🔄 Reentrancy call #4, vault balance: 1.0 ETH
+         🔄 Reentrancy call #5, vault balance: 0.0 ETH
+       ✅ Attack completed, total stolen: 5.0 ETH
+
+     📊 Post-attack state:
+       Vault balance: 0.0 ETH
+       Attacker contract balance: 5.0 ETH
+
+     💸 ATTACK SUMMARY:
+       Amount stolen: 5.0 ETH
+       Attack success rate: 100%
+
+     💰 Attacker withdrawing stolen funds...
+       Attacker final balance: 1004.0 ETH
+
+     🔚 DEMONSTRATION COMPLETE
+     =========================
+     ⚠️  This attack was possible due to the reentrancy vulnerability in the withdraw function.
+     🛡️  The fix involves using the Checks-Effects-Interactions pattern or ReentrancyGuard.
+
+   ```
+
+ ```bash
+  🧪 Running Vault Contract Tests
+  ================================
+
+    Vault Contract Tests
+      Deployment
+        ✓ Should deploy successfully (45ms)
+        ✓ Should have zero initial balance (12ms)
+
+      Deposit functionality
+        ✓ Should allow users to deposit ETH (67ms)
+        ✓ Should reject deposits of 0 ETH (23ms)
+        ✓ Should track multiple user deposits separately (89ms)
+
+      Withdrawal functionality
+        ✓ Should allow users to withdraw their funds (78ms)
+        ✓ Should reject withdrawal of more than deposited (34ms)
+        ✓ Should reject withdrawal from users with no balance (28ms)
+
+      Reentrancy vulnerability (VULNERABLE VERSION)
+        ✓ Should be vulnerable to reentrancy attack (156ms)
+        ✓ Should demonstrate the state inconsistency (123ms)
+
+      Edge cases
+        ✓ Should handle multiple deposits from same user (67ms)
+        ✓ Should handle partial withdrawals (45ms)
+
+    12 passing (756ms)
+
+   ```
 
 ---
 
