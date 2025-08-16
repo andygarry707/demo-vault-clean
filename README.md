@@ -75,7 +75,13 @@ This repository is designed as a portfolio-quality demo to demonstrate expertise
 
    ```bash
    npx ts-node scripts/exploit.ts
+
+
    ```
+
+
+## Test results 
+<img width="669" height="536" alt="изображение" src="https://github.com/user-attachments/assets/e983f64b-7b08-4042-93dd-2bf7cd7a99e0" />
 
 
 ---
