@@ -80,7 +80,10 @@ This repository is designed as a portfolio-quality demo to demonstrate expertise
    ```
 
 
-## Test results 
+
+## Test and attack demonstartion
+<img width="822" height="831" alt="изображение" src="https://github.com/user-attachments/assets/5708d29f-a64a-49ba-ada3-7e8d57d3e2de" />
+
 <img width="669" height="536" alt="изображение" src="https://github.com/user-attachments/assets/e983f64b-7b08-4042-93dd-2bf7cd7a99e0" />
 
 
