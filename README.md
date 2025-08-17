@@ -2,7 +2,9 @@
 
 Solidity Demo Project — Showcase for Web3 Skills
 
-This repository is designed as a portfolio-quality demo to demonstrate expertise in Solidity, smart contract security, TypeScript scripting, and modern Web3 development workflows.
+A portfolio-quality project demonstrating Solidity development, security awareness, and professional workflows.  
+This project implements a simple ETH vault with a **deliberate reentrancy vulnerability**, then shows how to exploit and patch it
+
 
 ---
 
@@ -80,9 +82,8 @@ This repository is designed as a portfolio-quality demo to demonstrate expertise
    ```
 
 
-
-## Test and attack demonstartion
-
+<details>
+<summary>Click to expand attack demonstration</summary>
 
  ```bash
 
@@ -143,8 +144,13 @@ This repository is designed as a portfolio-quality demo to demonstrate expertise
      🛡️  The fix involves using the Checks-Effects-Interactions pattern or ReentrancyGuard.
 
    ```
+</details>
 
+<details>
+<summary>Click to expand Test results</summary>
+  
  ```bash
+
   🧪 Running Vault Contract Tests
   ================================
 
@@ -174,6 +180,8 @@ This repository is designed as a portfolio-quality demo to demonstrate expertise
     12 passing (756ms)
 
    ```
+
+</details>
 
 ---
 
